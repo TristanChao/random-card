@@ -3,16 +3,16 @@ import './App.css'
 import { ImHeart, ImClubs, ImSpades, ImDiamonds } from 'react-icons/im'
 
 function App() {
-  const [val, setVal] = useState("A");
-  const [suit, setSuit] = useState(<ImHeart/>);
-
   const vals = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
   const suits = [<ImHeart/>, <ImClubs/>, <ImSpades/>, <ImDiamonds/>]
+  
+  const [val, setVal] = useState<string>(vals[Math.round(Math.random() * 12)]);
+  const [suit, setSuit] = useState(suits[Math.round(Math.random() * 3)]);
 
   function drawCard() {
-    setVal(vals[Math.round(Math.random() * 12)]);
-    setSuit(suits[Math.round(Math.random() * 3)]);
-  }
+    setVal(vals[Math.floor(Math.random() * 12)]);
+    setSuit(suits[Math.floor(Math.random() * 3)]);
+  };
 
   return (
     <>
