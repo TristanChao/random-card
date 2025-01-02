@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/random-card/',
   plugins: [react()],
+  resolve: {
+    alias: {
+      'react/jsx-runtime': require.resolve('react/jsx-runtime'),
+    }
+  }
 })
